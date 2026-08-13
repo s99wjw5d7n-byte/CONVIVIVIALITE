@@ -1,0 +1,223 @@
+{
+  "site": {
+    "title": "Convivialité Urbaine",
+    "description": "La convivialité comme politique publique en milieu urbain",
+    "author": "Manus AI"
+  },
+  "home": {
+    "hero": {
+      "title": "La convivialité comme politique publique urbaine",
+      "subtitle": "Repenser nos villes pour favoriser les liens sociaux et le bien-être collectif",
+      "buttonText": "Découvrir",
+      "backgroundImage": "place-publique.jpg"
+    },
+    "introduction": {
+      "title": "Qu'est-ce que la convivialité urbaine ?",
+      "content": "La convivialité urbaine désigne la capacité d'une ville à favoriser les rencontres, les échanges et les initiatives collectives. Elle va bien au-delà de la simple idée de partage de moments agréables, et constitue un levier puissant pour répondre aux défis contemporains des villes.",
+      "quote": "Conviviale est la société où l'homme contrôle l'outil.",
+      "quoteAuthor": "Ivan Illich",
+      "linkText": "En savoir plus"
+    },
+    "sections": {
+      "title": "Explorer la convivialité urbaine",
+      "cards": [
+        {
+          "icon": "PanelTop",
+          "iconColor": "#E9C46A",
+          "title": "Définition et concept",
+          "content": "Découvrez la notion de convivialité selon Ivan Illich et son application au milieu urbain.",
+          "linkText": "Lire plus",
+          "linkUrl": "/definition"
+        },
+        {
+          "icon": "Building",
+          "iconColor": "#2A9D8F",
+          "title": "Pourquoi une politique publique ?",
+          "content": "Explorez les enjeux contemporains des villes et les bénéfices d'une politique de convivialité.",
+          "linkText": "Lire plus",
+          "linkUrl": "/pourquoi-politique-publique"
+        },
+        {
+          "icon": "Leaf",
+          "iconColor": "#F4A261",
+          "title": "Mesures concrètes",
+          "content": "Découvrez les mesures pour aménager des espaces publics conviviaux et développer les tiers-lieux.",
+          "linkText": "Lire plus",
+          "linkUrl": "/mesures-concretes"
+        },
+        {
+          "icon": "Users",
+          "iconColor": "#E76F51",
+          "title": "Mise en œuvre",
+          "content": "Apprenez comment mettre en place une démarche intégrée et évaluer son impact.",
+          "linkText": "Lire plus",
+          "linkUrl": "/mise-en-oeuvre"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Témoignages",
+      "items": [
+        {
+          "quote": "La convivialité urbaine n'est pas un luxe, mais une nécessité pour créer des villes résilientes et inclusives où chacun peut s'épanouir.",
+          "author": "Marie Dupont, Urbaniste"
+        },
+        {
+          "quote": "Les tiers-lieux sont devenus des catalyseurs essentiels de la convivialité dans nos quartiers, créant des ponts entre des personnes qui ne se seraient jamais rencontrées autrement.",
+          "author": "Thomas Martin, Directeur d'un espace de coworking"
+        },
+        {
+          "quote": "Depuis que notre rue a été réaménagée selon les principes de la convivialité, j'ai rencontré plus de voisins en un mois qu'en dix ans de vie dans le quartier.",
+          "author": "Sophie Leroux, Habitante"
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "Prêt à explorer davantage ?",
+      "content": "Découvrez des exemples concrets de villes qui ont mis en place des politiques de convivialité urbaine et inspirez-vous de leurs réussites.",
+      "buttonText": "Voir les exemples",
+      "buttonUrl": "/exemples"
+    }
+  },
+  "definition": {
+    "hero": {
+      "title": "Définition et concept de la convivialité urbaine",
+      "subtitle": "Comprendre les fondements théoriques et les applications pratiques"
+    },
+    "introduction": {
+      "title": "Aux origines du concept",
+      "content": "Le concept de convivialité a été développé par Ivan Illich dans son ouvrage \"La Convivialité\" (1973). Pour Illich, une société conviviale est \"une société où l'outil moderne est au service de la personne intégrée à la collectivité, et non au service d'un corps de spécialistes\"."
+    },
+    "sections": [
+      {
+        "title": "La convivialité selon Ivan Illich",
+        "content": "Pour Ivan Illich, la convivialité représente l'inverse de la productivité industrielle. L'outil convivial est celui qui laisse à l'utilisateur une grande latitude d'action et favorise son autonomie. Il permet à chacun d'enrichir son environnement de fruits de sa vision personnelle.",
+        "image": "convivialite-illich.jpg"
+      },
+      {
+        "title": "Application au milieu urbain",
+        "content": "Appliquée à la ville, la convivialité désigne la capacité d'un espace urbain à favoriser les rencontres, les échanges et les initiatives collectives. Une ville conviviale est une ville où les habitants peuvent s'approprier l'espace public, participer à sa conception et à son animation.",
+        "image": "ville-conviviale.jpg"
+      },
+      {
+        "title": "Les dimensions de la convivialité urbaine",
+        "content": "La convivialité urbaine comporte plusieurs dimensions : spatiale (aménagement des espaces publics), sociale (mixité et inclusion), politique (participation citoyenne), économique (économie locale et collaborative) et environnementale (durabilité et résilience)."
+      }
+    ]
+  },
+  "whyPolicy": {
+    "hero": {
+      "title": "Pourquoi une politique publique de convivialité ?",
+      "subtitle": "Les enjeux contemporains qui justifient une approche structurée"
+    },
+    "introduction": {
+      "title": "La convivialité comme réponse aux défis urbains",
+      "content": "Face aux multiples défis auxquels sont confrontées les villes contemporaines, la convivialité apparaît comme une approche transversale capable d'apporter des réponses cohérentes et durables."
+    },
+    "challenges": [
+      {
+        "title": "Crise du lien social",
+        "content": "Individualisme, anonymat, solitude : les villes sont souvent synonymes d'isolement malgré la densité de population.",
+        "icon": "Users"
+      },
+      {
+        "title": "Défis environnementaux",
+        "content": "Changement climatique, pollution, perte de biodiversité : les villes doivent se transformer pour devenir plus durables.",
+        "icon": "Leaf"
+      },
+      {
+        "title": "Inégalités territoriales",
+        "content": "Gentrification, ségrégation spatiale, accès inégal aux services : les fractures urbaines s'accentuent.",
+        "icon": "Map"
+      },
+      {
+        "title": "Gouvernance complexe",
+        "content": "Multiplicité des acteurs, technocratisation, distance entre décideurs et citoyens : la gouvernance urbaine est en crise.",
+        "icon": "Building"
+      }
+    ]
+  },
+  "measures": {
+    "hero": {
+      "title": "Mesures concrètes pour une politique de convivialité urbaine",
+      "subtitle": "Actions pratiques pour transformer nos villes en espaces de convivialité"
+    },
+    "introduction": {
+      "content": "Une politique de convivialité urbaine s'articule autour de plusieurs axes d'intervention complémentaires, qui touchent à la fois à l'aménagement physique de la ville, à sa gouvernance et à son animation."
+    },
+    "sections": [
+      {
+        "title": "Aménagement des espaces publics conviviaux",
+        "content": "La transformation des rues en espaces conviviaux constitue une mesure fondamentale. L'approche des \"rues conviviales\" vise à créer \"un réseau de rues et d'espaces publics qui améliore la qualité des milieux de vie et le vivre ensemble\".",
+        "image": "espace-public.jpg",
+        "subsections": [
+          {
+            "title": "Rues conviviales",
+            "content": "Favoriser les mobilités douces, réduire la place de la voiture, élargir les trottoirs, créer des placettes publiques."
+          },
+          {
+            "title": "Places publiques et espaces de rencontre",
+            "content": "Créer des espaces accueillant une diversité d'usages, avec du mobilier urbain favorisant les interactions."
+          }
+        ]
+      },
+      {
+        "title": "Développement des tiers-lieux",
+        "content": "Les tiers-lieux représentent un levier majeur pour une politique de convivialité urbaine. Ces espaces hybrides et flexibles favorisent la rencontre, le partage et l'initiative collective.",
+        "image": "tiers-lieu.png"
+      },
+      {
+        "title": "Gouvernance participative",
+        "content": "Une politique de convivialité urbaine doit nécessairement s'appuyer sur une gouvernance renouvelée qui place les citoyens au cœur des décisions.",
+        "image": "participation.jpg"
+      }
+    ]
+  },
+  "implementation": {
+    "hero": {
+      "title": "Mise en œuvre d'une politique de convivialité urbaine",
+      "subtitle": "Stratégies et méthodes pour une approche intégrée"
+    }
+  },
+  "examples": {
+    "hero": {
+      "title": "Exemples de politiques de convivialité urbaine",
+      "subtitle": "Études de cas et bonnes pratiques à travers le monde"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "Nous contacter pour plus d'informations"
+    },
+    "form": {
+      "namePlaceholder": "Votre nom",
+      "emailPlaceholder": "Votre email",
+      "subjectPlaceholder": "Sujet",
+      "messagePlaceholder": "Votre message",
+      "buttonText": "Envoyer"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "email": "contact@convivialite-urbaine.fr",
+      "phone": "+33 1 23 45 67 89",
+      "address": "123 Rue de la Convivialité, 75014 Paris"
+    }
+  },
+  "footer": {
+    "about": "Ce site présente une analyse de la convivialité comme politique publique en milieu urbain, proposant des mesures concrètes pour sa mise en œuvre.",
+    "copyright": "© 2025 Convivialité Urbaine. Tous droits réservés."
+  },
+  "navigation": {
+    "items": [
+      { "path": "/", "label": "Accueil" },
+      { "path": "/definition", "label": "Définition et concept" },
+      { "path": "/pourquoi-politique-publique", "label": "Pourquoi une politique publique ?" },
+      { "path": "/mesures-concretes", "label": "Mesures concrètes" },
+      { "path": "/mise-en-oeuvre", "label": "Mise en œuvre" },
+      { "path": "/exemples", "label": "Exemples" },
+      { "path": "/contact", "label": "Contact" }
+    ]
+  }
+}
+

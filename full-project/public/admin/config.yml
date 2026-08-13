@@ -1,0 +1,232 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Affiche un bouton "Voir le site" dans l'interface d'administration
+site_url: https://TON-SITE.netlify.app
+display_url: https://TON-SITE.netlify.app
+
+# Les images uploadées via le CMS iront ici
+media_folder: "src/assets/images"
+public_folder: "/src/assets/images"
+
+publish_mode: simple
+locale: fr
+
+collections:
+  - name: "content"
+    label: "Contenu du site"
+    files:
+      - name: "content"
+        label: "Toutes les pages"
+        file: "src/content.json"
+        fields:
+          - label: "Informations générales du site"
+            name: "site"
+            widget: object
+            fields:
+              - { label: "Titre du site", name: title, widget: string }
+              - { label: "Description (SEO)", name: description, widget: text }
+              - { label: "Auteur", name: author, widget: string }
+
+          - label: "Page d'accueil"
+            name: "home"
+            widget: object
+            fields:
+              - label: "Section principale (Hero)"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+                  - { label: "Texte du bouton", name: buttonText, widget: string }
+                  - { label: "Image de fond (nom de fichier)", name: backgroundImage, widget: string }
+              - label: "Introduction"
+                name: introduction
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+                  - { label: "Citation", name: quote, widget: text }
+                  - { label: "Auteur de la citation", name: quoteAuthor, widget: string }
+                  - { label: "Texte du lien", name: linkText, widget: string }
+              - label: "Cartes de section"
+                name: sections
+                widget: object
+                fields:
+                  - { label: "Titre de la section", name: title, widget: string }
+                  - label: "Cartes"
+                    name: cards
+                    widget: list
+                    fields:
+                      - { label: "Icône (nom Lucide)", name: icon, widget: string }
+                      - { label: "Couleur de l'icône", name: iconColor, widget: color }
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+                      - { label: "Texte du lien", name: linkText, widget: string }
+                      - { label: "URL du lien", name: linkUrl, widget: string }
+              - label: "Témoignages"
+                name: testimonials
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - label: "Liste des témoignages"
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: "Citation", name: quote, widget: text }
+                      - { label: "Auteur", name: author, widget: string }
+              - label: "Appel à l'action"
+                name: callToAction
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+                  - { label: "Texte du bouton", name: buttonText, widget: string }
+                  - { label: "URL du bouton", name: buttonUrl, widget: string }
+
+          - label: "Page Définition"
+            name: "definition"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "Introduction"
+                name: introduction
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+              - label: "Sections"
+                name: sections
+                widget: list
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+                  - { label: "Image (nom de fichier)", name: image, widget: string, required: false }
+
+          - label: "Page Pourquoi une politique publique"
+            name: "whyPolicy"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "Introduction"
+                name: introduction
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+              - label: "Défis"
+                name: challenges
+                widget: list
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+                  - { label: "Icône (nom Lucide)", name: icon, widget: string }
+
+          - label: "Page Mesures concrètes"
+            name: "measures"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "Introduction"
+                name: introduction
+                widget: object
+                fields:
+                  - { label: "Texte", name: content, widget: text }
+              - label: "Sections"
+                name: sections
+                widget: list
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte", name: content, widget: text }
+                  - { label: "Image (nom de fichier)", name: image, widget: string, required: false }
+                  - label: "Sous-sections"
+                    name: subsections
+                    widget: list
+                    required: false
+                    fields:
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+
+          - label: "Page Mise en œuvre"
+            name: "implementation"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+
+          - label: "Page Exemples"
+            name: "examples"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+
+          - label: "Page Contact"
+            name: "contact"
+            widget: object
+            fields:
+              - label: "Section principale"
+                name: hero
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "Formulaire"
+                name: form
+                widget: object
+                fields:
+                  - { label: "Placeholder nom", name: namePlaceholder, widget: string }
+                  - { label: "Placeholder email", name: emailPlaceholder, widget: string }
+                  - { label: "Placeholder sujet", name: subjectPlaceholder, widget: string }
+                  - { label: "Placeholder message", name: messagePlaceholder, widget: string }
+                  - { label: "Texte du bouton", name: buttonText, widget: string }
+              - label: "Coordonnées"
+                name: info
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Email", name: email, widget: string }
+                  - { label: "Téléphone", name: phone, widget: string }
+                  - { label: "Adresse", name: address, widget: string }
+
+          - label: "Pied de page"
+            name: "footer"
+            widget: object
+            fields:
+              - { label: "À propos", name: about, widget: text }
+              - { label: "Copyright", name: copyright, widget: string }
+
+          - label: "Navigation"
+            name: "navigation"
+            widget: object
+            fields:
+              - label: "Éléments du menu"
+                name: items
+                widget: list
+                fields:
+                  - { label: "Chemin (URL)", name: path, widget: string }
+                  - { label: "Libellé", name: label, widget: string }
