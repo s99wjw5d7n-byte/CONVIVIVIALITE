@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Globe } from 'lucide-react';
+import { useContent } from '../hooks/useContent';
 
 const Examples = () => {
+  const { content } = useContent('examples');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -13,9 +15,9 @@ const Examples = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Exemples et études de cas</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.title}</h1>
             <p className="text-xl max-w-3xl">
-              Découvrez des exemples concrets de villes qui ont mis en place des politiques de convivialité urbaine.
+              {content.hero.subtitle}
             </p>
           </motion.div>
         </div>
