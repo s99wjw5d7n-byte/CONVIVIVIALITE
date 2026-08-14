@@ -33,7 +33,7 @@ site_url: https://hypervoisins-convivialite.netlify.app
 display_url: https://hypervoisins-convivialite.netlify.app
 
 # Les images uploadées via le CMS iront ici
-media_folder: "src/assets/images"
+media_folder: "full-project/src/assets/images"
 public_folder: "/src/assets/images"
 
 publish_mode: simple
@@ -45,7 +45,7 @@ collections:
     files:
       - name: "content"
         label: "Toutes les pages"
-        file: "src/content.json"
+        file: "full-project/src/content.json"
         fields:
           - label: "Informations générales du site"
             name: "site"
@@ -351,3 +351,4 @@ collections:
                 fields:
                   - { label: "Chemin (URL)", name: path, widget: string }
                   - { label: "Libellé", name: label, widget: string }
+
