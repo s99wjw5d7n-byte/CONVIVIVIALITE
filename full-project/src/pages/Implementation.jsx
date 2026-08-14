@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Network, BarChart } from 'lucide-react';
+import { useContent } from '../hooks/useContent';
 
 const Implementation = () => {
+  const { content } = useContent('implementation');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -13,9 +15,9 @@ const Implementation = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Mise en œuvre d'une politique de convivialité urbaine</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.title}</h1>
             <p className="text-xl max-w-3xl">
-              Comment mettre en place et évaluer une politique publique centrée sur la convivialité en milieu urbain.
+              {content.hero.subtitle}
             </p>
           </motion.div>
         </div>
