@@ -66,7 +66,7 @@ collections:
                   - { label: "Titre", name: title, widget: string }
                   - { label: "Sous-titre", name: subtitle, widget: text }
                   - { label: "Texte du bouton", name: buttonText, widget: string }
-                  - { label: "Image de fond (nom de fichier)", name: backgroundImage, widget: string }
+                  - { label: "Image de fond", name: backgroundImage, widget: image }
               - label: "Introduction"
                 name: introduction
                 widget: object
@@ -140,7 +140,7 @@ collections:
                 widget: object
                 fields:
                   - { label: "Titre de la sous-section", name: title, widget: string }
-                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Image", name: image, widget: image }
                   - { label: "Légende de l'image", name: imageCaption, widget: string }
                   - { label: "Texte d'introduction", name: intro, widget: text }
                   - { label: "Citation", name: quote, widget: text }
@@ -212,7 +212,7 @@ collections:
                 widget: object
                 fields:
                   - { label: "Titre", name: title, widget: string }
-                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Image", name: image, widget: image }
                   - { label: "Sous-titre 1 (Rues conviviales)", name: subtitle1, widget: string }
                   - { label: "Texte d'introduction 1", name: intro1, widget: text }
                   - { label: "Phrase avant les axes", name: listIntro1, widget: string }
@@ -234,8 +234,8 @@ collections:
                 widget: object
                 fields:
                   - { label: "Titre", name: title, widget: string }
-                  - { label: "Image 1 (nom de fichier)", name: image1, widget: string }
-                  - { label: "Image 2 (nom de fichier)", name: image2, widget: string }
+                  - { label: "Image 1", name: image1, widget: image }
+                  - { label: "Image 2", name: image2, widget: image }
                   - { label: "Texte d'introduction", name: intro1, widget: text }
                   - { label: "Phrase avant la liste", name: listIntro, widget: string }
                   - label: "Liste (caractéristiques)"
@@ -248,7 +248,7 @@ collections:
                 widget: object
                 fields:
                   - { label: "Titre", name: title, widget: string }
-                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Image", name: image, widget: image }
                   - { label: "Texte d'introduction", name: intro, widget: text }
                   - label: "Cartes (mesures de gouvernance)"
                     name: cards
@@ -351,4 +351,3 @@ collections:
                 fields:
                   - { label: "Chemin (URL)", name: path, widget: string }
                   - { label: "Libellé", name: label, widget: string }
-
