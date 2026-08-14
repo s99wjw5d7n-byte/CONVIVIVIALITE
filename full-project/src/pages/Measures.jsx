@@ -5,8 +5,10 @@ import espacePublic from '../assets/images/espace-public.jpg';
 import tiersLieu from '../assets/images/tiers-lieu.png';
 import coworking from '../assets/images/coworking.jpg';
 import participation from '../assets/images/participation.jpg';
+import { useContent } from '../hooks/useContent';
 
 const Measures = () => {
+  const { content } = useContent('measures');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -17,9 +19,9 @@ const Measures = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#264653]">Mesures concrètes pour une politique de convivialité urbaine</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#264653]">{content.hero.title}</h1>
             <p className="text-xl max-w-3xl text-[#264653]">
-              Découvrez les actions pratiques pour transformer nos villes en espaces de convivialité et de bien-être collectif.
+              {content.hero.subtitle}
             </p>
           </motion.div>
         </div>
