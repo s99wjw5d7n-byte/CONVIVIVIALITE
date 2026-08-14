@@ -2,8 +2,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useContent } from '../hooks/useContent';
 
 const Contact = () => {
+  const { content } = useContent('contact');
+  const { content: footerContent } = useContent('footer');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,41 +23,27 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a server
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    // Reset submission status after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => { setIsSubmitted(false); }, 5000);
   };
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="bg-[#264653] text-white py-20">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact</h1>
-            <p className="text-xl max-w-3xl">
-              Vous avez des questions ou des suggestions concernant la convivialité urbaine ? Contactez-nous !
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.title}</h1>
+            <p className="text-xl max-w-3xl">{content.hero.subtitle}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Breadcrumb */}
       <div className="bg-[#F8F9FA] border-b">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center text-sm text-[#495057]">
@@ -64,20 +54,14 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <div>
             <h2 className="text-3xl font-bold mb-6 text-[#264653]">À propos du projet</h2>
-            <p className="text-lg mb-8 text-[#495057]">
-              Ce site présente une analyse de la convivialité comme politique publique en milieu urbain, 
-              proposant des mesures concrètes pour sa mise en œuvre. Il s'agit d'une réflexion sur la manière 
-              dont nos villes peuvent devenir des lieux de rencontre, d'échange et de création collective.
-            </p>
+            <p className="text-lg mb-8 text-[#495057]">{footerContent.about}</p>
 
-            <h3 className="text-2xl font-bold mb-4 text-[#264653]">Nous contacter</h3>
-            
+            <h3 className="text-2xl font-bold mb-4 text-[#264653]">{content.info.title}</h3>
+
             <div className="space-y-4 mb-8">
               <div className="flex items-start">
                 <div className="w-10 h-10 bg-[#2A9D8F]/20 rounded-full flex items-center justify-center mr-4">
@@ -85,30 +69,27 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#264653]">Email</h4>
-                  <p className="text-[#495057]">contact@convivialite-urbaine.org</p>
+                  <p className="text-[#495057]">{content.info.email}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="w-10 h-10 bg-[#2A9D8F]/20 rounded-full flex items-center justify-center mr-4">
                   <Phone size={20} className="text-[#2A9D8F]" />
                 </div>
                 <div>
                   <h4 className="font-bold text-[#264653]">Téléphone</h4>
-                  <p className="text-[#495057]">+33 (0)1 23 45 67 89</p>
+                  <p className="text-[#495057]">{content.info.phone}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="w-10 h-10 bg-[#2A9D8F]/20 rounded-full flex items-center justify-center mr-4">
                   <MapPin size={20} className="text-[#2A9D8F]" />
                 </div>
                 <div>
                   <h4 className="font-bold text-[#264653]">Adresse</h4>
-                  <p className="text-[#495057]">
-                    123 Avenue de la Convivialité<br />
-                    75001 Paris, France
-                  </p>
+                  <p className="text-[#495057]">{content.info.address}</p>
                 </div>
               </div>
             </div>
@@ -144,12 +125,11 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold mb-6 text-[#264653]">Formulaire de contact</h2>
-            
+
             {isSubmitted ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-[#2A9D8F]/20 border border-[#2A9D8F] text-[#264653] rounded-lg p-6 mb-6"
@@ -163,66 +143,45 @@ const Contact = () => {
                   <div>
                     <label htmlFor="name" className="block text-[#264653] font-medium mb-2">Nom</label>
                     <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
+                      type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent"
-                      placeholder="Votre nom"
+                      placeholder={content.form.namePlaceholder}
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="email" className="block text-[#264653] font-medium mb-2">Email</label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
+                      type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent"
-                      placeholder="votre.email@exemple.com"
+                      placeholder={content.form.emailPlaceholder}
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-[#264653] font-medium mb-2">Sujet</label>
                   <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
+                    type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent"
-                    placeholder="Sujet de votre message"
+                    placeholder={content.form.subjectPlaceholder}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-[#264653] font-medium mb-2">Message</label>
                   <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
+                    id="message" name="message" value={formData.message} onChange={handleChange} required rows="6"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent"
-                    placeholder="Votre message..."
+                    placeholder={content.form.messagePlaceholder}
                   ></textarea>
                 </div>
-                
+
                 <div>
                   <button
                     type="submit"
                     className="inline-flex items-center px-6 py-3 bg-[#2A9D8F] text-white rounded-md hover:bg-[#2A9D8F]/80 transition-colors text-lg font-medium"
                   >
-                    Envoyer <Send size={18} className="ml-2" />
+                    {content.form.buttonText} <Send size={18} className="ml-2" />
                   </button>
                 </div>
               </form>
@@ -230,12 +189,8 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Back to Home */}
         <div className="mt-12 pt-6 border-t border-gray-200 text-center">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-[#2A9D8F] hover:text-[#2A9D8F]/80 transition-colors"
-          >
+          <Link to="/" className="inline-flex items-center text-[#2A9D8F] hover:text-[#2A9D8F]/80 transition-colors">
             <ArrowRight size={16} className="mr-2 rotate-180" /> Retour à l'accueil
           </Link>
         </div>
@@ -245,4 +200,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
