@@ -32,7 +32,7 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 site_url: https://hypervoisins-convivialite.netlify.app
 
 # Les images uploadées via le CMS iront ici
-media_folder: "src/assets/images"
+media_folder: "full-project/src/assets/images"
 public_folder: "/src/assets/images"
 
 publish_mode: simple
@@ -44,7 +44,7 @@ collections:
     files:
       - name: "content"
         label: "Toutes les pages"
-        file: "src/content.json"
+        file: "full-project/src/content.json"
         fields:
           - label: "Informations générales du site"
             name: "site"
