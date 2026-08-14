@@ -3,8 +3,13 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Building, Leaf, PanelTop } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 
-// Import dynamique des images
-import placePublique from '../assets/images/place-publique.jpg';
+// Import dynamique de toutes les images du dossier assets/images
+const images = import.meta.glob('../assets/images/*', { eager: true, import: 'default' });
+const img = (name) => {
+  if (!name) return undefined;
+  const filename = name.split('/').pop();
+  return images[`../assets/images/${filename}`];
+};
 
 // Mapping des icônes pour les utiliser dynamiquement
 const iconComponents = {
@@ -27,7 +32,7 @@ const Home = () => {
       <section 
         className="relative h-[80vh] flex items-center justify-center bg-cover bg-center text-white"
         style={{ 
-          backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.7), rgba(38, 70, 83, 0.7)), url(${placePublique})` 
+          backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.7), rgba(38, 70, 83, 0.7)), url(${img(hero.backgroundImage)})` 
         }}
       >
         <div className="container mx-auto px-4 text-center">

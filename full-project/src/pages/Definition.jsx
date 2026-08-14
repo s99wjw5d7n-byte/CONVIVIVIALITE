@@ -4,7 +4,11 @@ import { ArrowRight, Quote } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 
 const images = import.meta.glob('../assets/images/*', { eager: true, import: 'default' });
-const img = (name) => images[`../assets/images/${name}`];
+const img = (name) => {
+  if (!name) return undefined;
+  const filename = name.split('/').pop();
+  return images[`../assets/images/${filename}`];
+};
 
 const Definition = () => {
   const { content } = useContent('definition');
