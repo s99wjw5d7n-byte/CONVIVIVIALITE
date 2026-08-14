@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
 import placePublique from '../assets/images/place-publique.jpg';
+import { useContent } from '../hooks/useContent';
 
 const Definition = () => {
+  const { content } = useContent('definition');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -14,9 +16,9 @@ const Definition = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Définition et concept de la convivialité urbaine</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.title}</h1>
             <p className="text-xl max-w-3xl">
-              Explorez la notion de convivialité selon Ivan Illich et son application au milieu urbain pour créer des villes plus humaines.
+              {content.hero.subtitle}
             </p>
           </motion.div>
         </div>
