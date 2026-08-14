@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Shield, Users, Leaf } from 'lucide-react';
+import { useContent } from '../hooks/useContent';
 
 const WhyPolicy = () => {
+  const { content } = useContent('whyPolicy');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -13,9 +15,9 @@ const WhyPolicy = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Pourquoi faire de la convivialité une politique publique urbaine ?</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.title}</h1>
             <p className="text-xl max-w-3xl">
-              Découvrez les enjeux contemporains des villes et les bénéfices d'une politique centrée sur la convivialité.
+              {content.hero.subtitle}
             </p>
           </motion.div>
         </div>
