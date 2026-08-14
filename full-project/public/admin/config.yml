@@ -98,6 +98,44 @@ collections:
                 fields:
                   - { label: "Titre", name: title, widget: string }
                   - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "1.1 La convivialité selon Ivan Illich"
+                name: illich
+                widget: object
+                fields:
+                  - { label: "Titre de la sous-section", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - { label: "Citation", name: quote, widget: text }
+                  - { label: "Auteur de la citation", name: quoteAuthor, widget: string }
+                  - { label: "Phrase avant la liste", name: listIntro, widget: string }
+                  - label: "Liste à puces"
+                    name: list
+                    widget: list
+                    field: { label: "Élément", name: item, widget: string }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
+              - label: "1.2 La convivialité appliquée au milieu urbain"
+                name: urbain
+                widget: object
+                fields:
+                  - { label: "Titre de la sous-section", name: title, widget: string }
+                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Légende de l'image", name: imageCaption, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - { label: "Citation", name: quote, widget: text }
+                  - { label: "Auteur de la citation", name: quoteAuthor, widget: string }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
+              - label: "Caractéristiques d'une ville conviviale"
+                name: caracteristiques
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - label: "Cartes"
+                    name: cards
+                    widget: list
+                    fields:
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
 
           - label: "Page Pourquoi une politique publique"
             name: "whyPolicy"
@@ -109,6 +147,32 @@ collections:
                 fields:
                   - { label: "Titre", name: title, widget: string }
                   - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "2.1 Les enjeux contemporains des villes"
+                name: enjeux
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - label: "Cartes (défis)"
+                    name: cards
+                    widget: list
+                    fields:
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
+              - label: "2.2 Les bénéfices d'une politique de convivialité"
+                name: benefices
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - label: "Lignes du tableau"
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: "Bénéfice", name: title, widget: string }
+                      - { label: "Description", name: content, widget: text }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
 
           - label: "Page Mesures concrètes"
             name: "measures"
@@ -120,6 +184,82 @@ collections:
                 fields:
                   - { label: "Titre", name: title, widget: string }
                   - { label: "Sous-titre", name: subtitle, widget: text }
+              - label: "3.1 Aménagement des espaces publics"
+                name: espaces
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Sous-titre 1 (Rues conviviales)", name: subtitle1, widget: string }
+                  - { label: "Texte d'introduction 1", name: intro1, widget: text }
+                  - { label: "Phrase avant les axes", name: listIntro1, widget: string }
+                  - label: "Les 3 axes"
+                    name: axes
+                    widget: list
+                    fields:
+                      - { label: "Nom de l'axe", name: label, widget: string }
+                      - { label: "Description", name: content, widget: text }
+                  - { label: "Texte d'introduction 2", name: intro2, widget: text }
+                  - { label: "Sous-titre 2 (Places publiques)", name: subtitle2, widget: string }
+                  - { label: "Texte d'introduction 3", name: intro3, widget: text }
+                  - label: "Liste (places publiques)"
+                    name: list2
+                    widget: list
+                    field: { label: "Élément", name: item, widget: string }
+              - label: "3.2 Développement des tiers-lieux"
+                name: tiersLieux
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Image 1 (nom de fichier)", name: image1, widget: string }
+                  - { label: "Image 2 (nom de fichier)", name: image2, widget: string }
+                  - { label: "Texte d'introduction", name: intro1, widget: text }
+                  - { label: "Phrase avant la liste", name: listIntro, widget: string }
+                  - label: "Liste (caractéristiques)"
+                    name: list
+                    widget: list
+                    field: { label: "Élément", name: item, widget: string }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
+              - label: "3.3 Gouvernance participative"
+                name: gouvernance
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Image (nom de fichier)", name: image, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - label: "Cartes (mesures de gouvernance)"
+                    name: cards
+                    widget: list
+                    fields:
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+                      - { label: "Exemple", name: example, widget: string }
+              - label: "3.4 Animation de l'espace public"
+                name: animation
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - label: "Types d'animation"
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: "Titre", name: title, widget: string }
+                      - { label: "Texte", name: content, widget: text }
+              - label: "3.5 Soutien à l'économie de la convivialité"
+                name: economie
+                widget: object
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Texte d'introduction", name: intro, widget: text }
+                  - { label: "Titre de l'encadré", name: cardTitle, widget: string }
+                  - label: "Acteurs"
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: "Nom de l'acteur", name: label, widget: string }
+                      - { label: "Description", name: content, widget: text }
+                  - { label: "Texte de conclusion", name: conclusion, widget: text }
 
           - label: "Page Mise en œuvre"
             name: "implementation"
