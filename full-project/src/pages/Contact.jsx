@@ -15,18 +15,36 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => { setIsSubmitted(false); }, 5000);
+    setIsSubmitting(true);
+    setError(false);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact-form", ...formData }),
+    })
+      .then(() => {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => { setIsSubmitted(false); }, 5000);
+      })
+      .catch(() => setError(true))
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -138,7 +156,22 @@ const Contact = () => {
                 <p>Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                name="contact-form"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact-form" />
+                <p className="hidden">
+                  <label>Ne pas remplir : <input name="bot-field" onChange={handleChange} /></label>
+                </p>
+                {error && (
+                  <div className="bg-red-50 border border-red-300 text-red-700 rounded-lg p-4">
+                    Une erreur est survenue lors de l'envoi. Réessaie, ou écris-nous directement à {content.info.email}.
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-[#264653] font-medium mb-2">Nom</label>
@@ -179,9 +212,10 @@ const Contact = () => {
                 <div>
                   <button
                     type="submit"
-                    className="inline-flex items-center px-6 py-3 bg-[#2A9D8F] text-white rounded-md hover:bg-[#2A9D8F]/80 transition-colors text-lg font-medium"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-6 py-3 bg-[#2A9D8F] text-white rounded-md hover:bg-[#2A9D8F]/80 transition-colors text-lg font-medium disabled:opacity-60"
                   >
-                    {content.form.buttonText} <Send size={18} className="ml-2" />
+                    {isSubmitting ? 'Envoi en cours...' : content.form.buttonText} <Send size={18} className="ml-2" />
                   </button>
                 </div>
               </form>
